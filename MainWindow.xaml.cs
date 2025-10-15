@@ -3,12 +3,8 @@ using System.Windows;
 
 namespace MunicipalReporterPrototype
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        //Static linked list to store issues
         public static IssueLinkedList Issues = new IssueLinkedList();
 
         public MainWindow()
@@ -18,9 +14,19 @@ namespace MunicipalReporterPrototype
 
         private void btnReportIssue_Click(object sender, RoutedEventArgs e)
         {
-            ReportIssueWindow reportIssueWindow = new ReportIssueWindow();
-            reportIssueWindow.Show();
+            new ReportIssueWindow().Show();
             this.Close();
         }
+
+        private void btnChatBot_Click(object sender, RoutedEventArgs e)
+        {
+            new ChatBot().ShowDialog();
+        }
+
+        private void BtnEvents_Click(object sender, RoutedEventArgs e)
+        {
+            new Events().Show();
+        }
+
     }
 }
